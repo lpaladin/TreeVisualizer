@@ -1,0 +1,20 @@
+{
+	"copyright": "版权所有 © 2014 - %s 北京大学人工智能实验室",
+	"index.title": "首页",
+	"tree.title": "树的名字",
+	"tree.file": "树的轨迹文件",
+	"create": "创建",
+	"tree.create": "点击这里上传树",
+	"tree.size": "大小",
+	"tree.date": "创建日期",
+	"tree.view": "查看",
+	"treeview.count": "一次拉取动作数",
+	"pull": "拉取并播放下一组动作",
+	"pullfinal": "拉取最终树",
+	"treeview.displaymethod": "展示详细程度",
+	"treeview.displaymethod.standard": "完整",
+	"treeview.displaymethod.lite": "仅显示每层最新5个结点",
+	"treeview.treelayout": "布局",
+	"treeview.treelayout.standard": "标准树",
+	"treeview.treelayout.radial": "放射状树"
+}

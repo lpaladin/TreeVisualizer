@@ -1,0 +1,33 @@
+{% extends '_layout.html' %}
+{% block title %}{{ shared.title }} - {{ tree.title }}{% endblock %}
+{% block head %}
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/treeview.js"></script>
+{% endblock %}
+{% block content %}
+<header><h2>{{ tree.title }}</h2></header>
+<div class="row">
+    <section class="panel panel-info col-md-3">
+        <form class="panel-body" role="form">
+            <p class="alert alert-info" id="lblStatus">就绪 / Ready</p>
+            <label for="cmbTreeLayout" class="control-label">{{ __("treeview.treelayout") }}</label>
+            <select class="form-control" id="cmbTreeLayout">
+                <option value="standard">{{ __("treeview.treelayout.standard") }}</option>
+                <option value="radial">{{ __("treeview.treelayout.radial") }}</option>
+            </select>
+            <label for="cmbDisplayMethod" class="control-label">{{ __("treeview.displaymethod") }}</label>
+            <select class="form-control" id="cmbDisplayMethod">
+                <option value="standard">{{ __("treeview.displaymethod.standard") }}</option>
+                <option value="lite">{{ __("treeview.displaymethod.lite") }}</option>
+            </select>
+            <label for="txtPullCount" class="control-label">{{ __("treeview.count") }}</label>
+            <input type="number" class="form-control numeric" id="txtPullCount" data-validatefunc="nonNull" value="5" min="1" />
+            <a id="btnPull" class="btn btn-primary" onclick="PullOperations('{{ tree._id }}')">{{ __("pull") }}</a>
+            <a id="btnPullFinal" class="btn btn-danger" onclick="PullFinal('{{ tree._id }}')">{{ __("pullfinal") }}</a>
+        </form>
+    </section>
+    <section class="col-md-9">
+        <svg id="svgTreeView"></svg>
+    </section>
+</div>
+{% endblock %}

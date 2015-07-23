@@ -1,0 +1,39 @@
+{% extends '_layout.html' %}
+{% block title %}{{ shared.title }} - {{ __("index.title") }}{% endblock %}
+{% block content %}
+<header><h2>{{ shared.title }}</h2></header>
+<section class="panel panel-info">
+    <header class="panel-heading">
+        <a href="#frmUploadTree" data-toggle="collapse">{{ __("tree.create") }}</a>
+    </header>
+    <form class="panel-body form-horizontal collapse" id="frmUploadTree" role="form">
+        <div class="alert" style="display: none">...</div>
+        <div class="form-group">
+            <label for="txtTreeTitle" class="col-sm-3 control-label">{{ __("tree.title") }}</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" name="title" id="txtTreeTitle" data-validatefunc="nonNull" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ofdTreeFile" class="col-sm-3 control-label">{{ __("tree.file") }}</label>
+            <div class="col-sm-7">
+                <input type="file" class="form-control" name="treefile" id="ofdTreeFile" data-validatefunc="nonNull" />
+            </div>
+        </div>
+        <button class="btn btn-primary col-sm-offset-3" onclick="ValidateAndSubmit('frmUploadTree')">{{ __("create") }}</button>
+    </form>
+</section>
+<section>
+    <table class="table table-hover table-striped">
+        <tr><th>{{ __("tree.title") }}</th><th>{{ __("tree.size") }}</th><th>{{ __("tree.date") }}</th><th></th></tr>
+        {% for tree in trees %}
+        <tr>
+            <td>{{ tree.title }}</td>
+            <td>{{ Math.ceil(tree.size / 1024) }} KB</td>
+            <td>{{ tree.date.toString() }}</td>
+            <td><a class="btn btn-default" href="/trees/{{ tree._id }}"><span class="glyphicon glyphicon-eye-open"></span> {{ __("tree.view") }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

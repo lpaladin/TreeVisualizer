@@ -1,0 +1,20 @@
+{
+	"copyright": "Copyright © 2014 - %s AILab, Peking University",
+	"index.title": "HOME",
+	"tree.title": "Name of tree",
+	"tree.file": "Trace file",
+	"create": "Create",
+	"tree.create": "Click here to upload your tree",
+	"tree.size": "Size",
+	"tree.date": "Date of creation",
+	"tree.view": "View",
+	"treeview.count": "Number of operations to fetch",
+	"pull": "Fetch and play next operations",
+	"pullfinal": "Fetch the final tree",
+	"treeview.displaymethod": "Display detail",
+	"treeview.displaymethod.standard": "Complete tree",
+	"treeview.displaymethod.lite": "Latest 5 nodes every layer",
+	"treeview.treelayout": "Tree layout",
+	"treeview.treelayout.standard": "Standard",
+	"treeview.treelayout.radial": "Radial"
+}

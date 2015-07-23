@@ -1,0 +1,13 @@
+{
+  "name": "njsTreeVisualizer",
+  "version": "0.0.0",
+  "description": "njsTreeVisualizer",
+  "main": "app.js",
+  "dependencies": {
+    "express": "3.4.4",
+    "i18n": "^0.5.0",
+    "nedb": "^1.1.2",
+    "socket.io": "^1.3.6",
+    "swig": "*"
+  }
+}

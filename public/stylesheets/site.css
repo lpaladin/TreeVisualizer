@@ -1,0 +1,82 @@
+﻿html, body {
+    font-family: 'Microsoft YaHei' SimHei 'Courier New' Arial !important;
+}
+
+body > footer {
+	margin: 10px;
+}
+
+div.waitmask {
+	z-index: 9999;
+	display: table;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAAA1BMVEUQDAweX52NAAAAAXRSTlOwi4dr6gAAABRJREFUeF59wIEAAAAAgKD9qTeoaAAeAAFI/2XxAAAAAElFTkSuQmCC') /*../images/overlay.png*/;
+	*background: url(../images/overlay.png); /* For IE 6 and 7 */
+}
+
+div.loading {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+header.panel-heading > a[href] {
+	display: block;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+svg#svgTreeView {
+	width: 100%;
+	height: 80vh;
+    overflow: visible;
+}
+
+svg .node {
+    animation: fadein 0.3s linear 1 normal;
+}
+
+svg .node circle {
+    box-shadow: 10px 10px gray;
+    fill: lightblue;
+    stroke: gray;
+    stroke-width: 3px;
+}
+
+svg .node circle {
+    transition: transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+svg .node text {
+    text-shadow: 1px 1px white,
+        1px 1px white,
+        1px 1px white, 
+        1px 1px white;
+    transition: font-size 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+svg .node:hover circle {
+    transform: scale(1.2);
+}
+
+svg .node:hover text {
+    fill: red;
+    font-size: 2em;
+}
+
+svg .link {
+    fill: none;
+    stroke: deepskyblue;
+    stroke-width: 3px;
+    box-shadow: 5px 5px gray;
+}

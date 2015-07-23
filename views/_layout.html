@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{{ shared.title }}{% endblock %}</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/jquery-1.10.2.min.js"></script>
+    <script src="/javascripts/respond.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/d3.min.js"></script>
+    <script src="/javascripts/site.js"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div id="loading" class="waitmask" style="display: none">
+        <div class="loading">
+            <img src="/images/ajax-loader.gif" alt="Loading" />
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">{{ shared.title }}</a>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+        <iframe name="submitTarget" id="submitTarget" src="about:blank" style="display: none"></iframe>
+        <footer class="text-muted">
+            {{ __("copyright", shared.year) }}
+            <span class="text-muted pull-right">
+                <select onchange="window.location.href = '/lang/' + this.value">
+                    <option value="en" {% if lang == "en" %}selected{% endif %}>英语 / English</option>
+                    <option value="zh" {% if lang == "zh" %}selected{% endif %}>中文 / Chinese</option>
+                </select>
+            </span>
+        </footer>
+    </div>
+</body>
+</html>
